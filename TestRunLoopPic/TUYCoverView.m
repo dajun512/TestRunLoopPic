@@ -77,10 +77,11 @@
 //拖动
 -(void)panHandle:(UIPanGestureRecognizer *)handle
 {
-    CGPoint locationP = [handle translationInView:self];
+    CGPoint locationP = [handle translationInView:handle.view];
+
     handle.view.transform = CGAffineTransformTranslate(handle.view.transform,locationP.x, locationP.y);
     
-    [handle setTranslation:CGPointZero inView:self];
+    [handle setTranslation:CGPointZero inView:handle.view];
     
 }
 
